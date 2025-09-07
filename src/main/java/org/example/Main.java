@@ -16,6 +16,6 @@ public class Main {
         System.out.println("Разность двух чисел = " + (firstNumber - secondNumber));
         System.out.println("Произведение двух чисел = " + (firstNumber * secondNumber));
         System.out.println("Частное = " + ((double) firstNumber / secondNumber));
-
+        scanner.close(); // Закрываем сканер
     }
 }
