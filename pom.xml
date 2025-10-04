@@ -21,6 +21,11 @@
         <artifactId>maven-jar-plugin</artifactId>
         <version>3.4.2</version>
     </dependency>
+        <dependency>
+            <groupId>org.apache.groovy</groupId>
+            <artifactId>groovy</artifactId>
+            <version>4.0.6</version>
+        </dependency>
     </dependencies>
     <build>
         <plugins>
