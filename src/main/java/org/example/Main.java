@@ -1,12 +1,27 @@
 package org.example;
-
+import java.io.File;
 import java.util.Scanner;
 
 public class Main {
     public static void main(String[] args) {
-        System.out.println("Курсовой проект. Задание по теме - Как компилировать и запускать Java");
-        System.out.println("Введите текст и нажмите <Enter>:");
-        String text = new Scanner(System.in).nextLine();
-        System.out.println(("Длина текста: " + text.length()));
+        Scanner scanner = new Scanner(System.in);
+        int validFileCount = 0;
+
+        while (true) {
+            System.out.print("Введите путь к файлу: ");
+            String patch = scanner.nextLine();
+            File file = new File(patch);
+
+            boolean fileExists = file.exists();
+            boolean isDirectory = file.isDirectory();
+
+            if (!fileExists || isDirectory) {
+                System.out.println("Не верно указан путь к файлу");
+                continue;
+            }
+
+            validFileCount++;
+            System.out.println("Путь указан верно " + validFileCount);
+        }
     }
 }
