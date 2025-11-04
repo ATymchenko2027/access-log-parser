@@ -1,0 +1,19 @@
+src
+└── ru
+    └── courses
+        ├── geometry
+        │   ├── Point.java
+        │   ├── Line.java
+        │   ├── Polygon.java
+        │   ├── Circle.java
+        │   ├── Rectangle.java
+        │   └── Triangle.java
+        ├── shapes
+        │   ├── Shape.java
+        │   ├── Square.java
+        │   └── Ellipse.java
+        ├── utils
+        │   ├── MathUtils.java
+        │   └── GeometryUtils.java
+        └── main
+            └── MainApplication.java
