@@ -47,19 +47,19 @@ public class Main {
                     int totalLines = 0; // Общее количество строк
 
                     while ((line = reader.readLine()) != null) {
+                        totalLines++; // Увеличиваем общее количество строк
                         int length = line.length();
 
                         // Проверка длины строки
                         if (length > 1024) {
-                            throw new LineTooLongException("Строка " + (totalLines + 1) + " превышает максимальную длину в 1024 символа.");
+                            throw new LineTooLongException("Строка " + totalLines + " превышает максимальную длину в 1024 символа.");
                         }
 
-                        totalLines++; // Увеличиваем общее количество строк
                         maxLength = Math.max(maxLength, length); // Обновляем максимальную длину
                         minLength = Math.min(minLength, length); // Обновляем минимальную длину
 
                         // Выводим номер строки и её длину
-                        System.out.println("Строка " + (totalLines) + ": Длина строки = " + length);
+                        //System.out.println("Строка " + totalLines + ": Длина строки = " + length);
                     }
 
                     // Выводим статистику по файлу
@@ -68,10 +68,10 @@ public class Main {
                     System.out.println("Длина самой короткой строки: " + (minLength == Integer.MAX_VALUE ? 0 : minLength)); // Если файл пустой, выводим 0
 
                 } catch (LineTooLongException e) {
-                    System.err.println("Ошибка: " + e.getMessage());
+                    ExceptionHandler.handleLineTooLongException(e);
                     break; // Завершаем выполнение программы при возникновении исключения
                 } catch (IOException e) {
-                    System.err.println("Ошибка чтения файла: " + e.getMessage());
+                    ExceptionHandler.handleIOException(e);
                 }
 
                 // Завершение программы после успешного чтения файла
